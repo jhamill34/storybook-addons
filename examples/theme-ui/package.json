@@ -1,0 +1,24 @@
+{
+  "name": "color-mode",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "spedue compile 'src/index.ts'",
+    "clean": "spedue clean",
+    "compile": "spedue compile 'src/**/*' --noEmit",
+    "lint": "spedue lint",
+    "start": "spedue start",
+    "test": "spedue test"
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "theme-ui": "^0.3.1"
+  },
+  "devDependencies": {
+    "@spedue/scripts": "*"
+  }
+}

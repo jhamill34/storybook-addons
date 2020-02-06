@@ -4,6 +4,7 @@
     "name": "Joshua Rasmussen",
     "email": "joshrasmussen34@gmail.com"
   },
+  "private": false,
   "keywords": [
     "storybook",
     "addon",
@@ -33,52 +34,12 @@
     "@storybook/theming": "^5.2.5"
   },
   "devDependencies": {
-    "@testing-library/react": "^9.3.2",
-    "@types/jest": "^24.0.22",
-    "@types/react": "^16.9.11",
-    "@types/theme-ui": "^0.3.1",
-    "jest-emotion": "^10.0.17",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "theme-ui": "^0.2.46",
-    "typescript": "^3.7.2"
+    "@spedue/scripts": "*"
   },
   "peerDependencies": {
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "theme-ui": "^0.3.1"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn test"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{tsx, ts}": [
-      "bash -c \"yarn compile\"",
-      "eslint --fix",
-      "git add"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/joshrasmussen34/storybook-addon-color-mode.git"
   },
   "publishConfig": {
     "access": "public"
