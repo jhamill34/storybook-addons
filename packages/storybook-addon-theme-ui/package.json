@@ -10,7 +10,7 @@
     "typescript",
     "theme-ui"
   ],
-  "version": "0.0.3-development",
+  "version": "0.0.0-development",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
@@ -23,17 +23,13 @@
     "build": "spedue compile 'src/index.ts'",
     "compile": "spedue compile 'src/**/*' --noEmit",
     "lint": "spedue lint",
-    "prepublish": "yarn run build",
-    "test": "spedue test",
-    "semantic-release": "semantic-release"
+    "test": "spedue test"
   },
   "prettier": "@spedue/prettier-config",
   "eslintConfig": {
     "extends": "@spedue/eslint-config"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.22",
-    "@mdx-js/react": "^1.5.1",
     "@storybook/addons": "^5.3.9",
     "@storybook/api": "^5.3.9",
     "@storybook/components": "^5.3.9",
@@ -54,7 +50,8 @@
   },
   "peerDependencies": {
     "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react-dom": "^16.11.0",
+    "theme-ui": "^0.3.1"
   },
   "repository": {
     "type": "git",
