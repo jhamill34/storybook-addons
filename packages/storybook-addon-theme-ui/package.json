@@ -1,0 +1,66 @@
+{
+  "name": "storybook-addon-theme-ui",
+  "author": {
+    "name": "Joshua Rasmussen",
+    "email": "joshrasmussen34@gmail.com"
+  },
+  "keywords": [
+    "storybook",
+    "addon",
+    "typescript",
+    "theme-ui"
+  ],
+  "version": "0.0.3-development",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "spedue compile 'src/index.ts'",
+    "compile": "spedue compile 'src/**/*' --noEmit",
+    "lint": "spedue lint",
+    "prepublish": "yarn run build",
+    "test": "spedue test",
+    "semantic-release": "semantic-release"
+  },
+  "prettier": "@spedue/prettier-config",
+  "eslintConfig": {
+    "extends": "@spedue/eslint-config"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.22",
+    "@mdx-js/react": "^1.5.1",
+    "@storybook/addons": "^5.3.9",
+    "@storybook/api": "^5.3.9",
+    "@storybook/components": "^5.3.9",
+    "@storybook/core-events": "^5.3.9",
+    "@storybook/theming": "^5.3.9"
+  },
+  "devDependencies": {
+    "@spedue/scripts": "^0.1.20",
+    "@testing-library/react": "^9.3.2",
+    "@types/jest": "^24.0.22",
+    "@types/react": "^16.9.11",
+    "@types/theme-ui": "^0.3.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "semantic-release": "^15.13.30",
+    "theme-ui": "^0.3.1",
+    "typescript": "^3.7.2"
+  },
+  "peerDependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshrasmussen34/storybook-addon-color-mode.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
