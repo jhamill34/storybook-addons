@@ -9,9 +9,7 @@
     "build": "spedue compile 'src/index.ts'",
     "clean": "spedue clean",
     "compile": "spedue compile 'src/**/*' --noEmit",
-    "lint": "spedue lint",
-    "start": "spedue start",
-    "test": "spedue test"
+    "start": "spedue story"
   },
   "dependencies": {
     "react": "^16.12.0",
