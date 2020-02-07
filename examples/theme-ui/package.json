@@ -9,7 +9,7 @@
     "build": "spedue compile 'src/index.ts'",
     "clean": "spedue clean",
     "compile": "spedue compile 'src/**/*' --noEmit",
-    "story": "spedue story"
+    "start": "spedue story"
   },
   "dependencies": {
     "react": "^16.12.0",
