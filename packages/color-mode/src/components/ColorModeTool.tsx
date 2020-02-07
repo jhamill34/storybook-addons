@@ -36,6 +36,8 @@ const defaultBindings: KeyBinding = {
  * Actions include Left and Right arrow keys and number keys.
  */
 export function ColorModeTool(): React.ReactElement {
+  console.log('COLOR MODE TOOL')
+
   const { modes, defaultMode, bindings } = useParameter<ColorModeAddonParams>(
     PARAM_KEY,
     {

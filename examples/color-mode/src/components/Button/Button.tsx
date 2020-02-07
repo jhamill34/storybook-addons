@@ -8,5 +8,9 @@ type ButtonProps = {
 }
 
 export function Button(props: ButtonProps): React.ReactElement {
-  return <button sx={{ color: 'red' }}>{props.title}</button>
+  return (
+    <button sx={{ color: 'red', backgroundColor: 'text' }}>
+      {props.title}
+    </button>
+  )
 }

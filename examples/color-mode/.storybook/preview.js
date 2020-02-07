@@ -1,6 +1,8 @@
-import { addParameters } from '@storybook/react'
+import { addParameters, addDecorator } from '@storybook/react'
 import { setupPreview } from '@spedue/storybook-preset/dist/preview'
 import { create } from '@storybook/theming'
+import { withThemeProvider } from 'storybook-addon-color-mode'
+import { theme } from '../src/theme'
 
 const myTheme = create({
   base: 'light',
@@ -24,7 +26,16 @@ const myTheme = create({
 setupPreview(addParameters)
 
 addParameters({
+  colorMode: {
+    modes: {
+      dark: {
+        name: 'Dark'
+      }
+    },
+  },
   options: {
     theme: myTheme,
   },
 })
+
+addDecorator(withThemeProvider(theme))
