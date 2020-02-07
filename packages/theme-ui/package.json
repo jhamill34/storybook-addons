@@ -1,5 +1,5 @@
 {
-  "name": "storybook-addon-color-mode",
+  "name": "storybook-addon-theme-ui",
   "author": {
     "name": "Joshua Rasmussen",
     "email": "joshrasmussen34@gmail.com"
@@ -18,20 +18,20 @@
   "files": [
     "dist/**/*",
     "README.md",
-    "LICENSE",
-    "register.js"
+    "LICENSE"
   ],
   "scripts": {
     "build": "spedue compile 'src/index.ts'",
     "compile": "spedue compile 'src/**/*' --noEmit",
+    "lint": "spedue lint",
     "test": "spedue test"
   },
   "dependencies": {
-    "@storybook/addons": "^5.3.12",
-    "@storybook/api": "^5.3.12",
-    "@storybook/components": "^5.3.12",
-    "@storybook/core-events": "^5.3.12",
-    "@storybook/theming": "^5.3.12"
+    "@storybook/addons": "~5.2.0",
+    "@storybook/api": "~5.2.0",
+    "@storybook/components": "~5.2.0",
+    "@storybook/core-events": "~5.2.0",
+    "@storybook/theming": "~5.2.0"
   },
   "devDependencies": {
     "@spedue/scripts": "*"

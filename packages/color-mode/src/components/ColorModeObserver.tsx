@@ -1,5 +1,5 @@
 import React from 'react'
-import { Styled, ColorMode, Theme, ThemeProvider } from 'theme-ui'
+import { Styled, Theme, ThemeProvider } from 'theme-ui'
 import { useColorMode } from '../hooks/useColorMode'
 
 type ColorModeObserverProps = {
@@ -32,7 +32,6 @@ function BaseColorModeObserver(
 
   return (
     <ThemeProvider theme={theme}>
-      <ColorMode />
       <Styled.root>{children}</Styled.root>
     </ThemeProvider>
   )

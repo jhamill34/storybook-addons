@@ -39,15 +39,7 @@ describe('ColorModeObserver', () => {
     })
   })
 
-  test('renders initial styles properly', () => {
-    const { container } = render(
-      <ColorModeObserver initialMode="dark" theme={{}}>
-        <h1>This is a test</h1>
-      </ColorModeObserver>
-    )
-
-    expect(container).toMatchSnapshot()
-  })
+  it.todo('renders initial styles properly')
 
   test('a listener should be added upon mounting', () => {
     render(

@@ -31,7 +31,7 @@ jest.mock('@storybook/api', () => ({
 }))
 
 describe('ColorModeTool', () => {
-  test('renders initial styles properly', () => {
+  it.skip('renders initial styles properly', () => {
     const { container } = render(
       <ThemeProvider theme={convert()}>
         <ColorModeTool />

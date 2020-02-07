@@ -70,21 +70,21 @@ export function ColorModeTool(): React.ReactElement {
 
   return (
     <WithTooltip
+      closeOnClick
       placement="top"
-      trigger="click"
       tooltip={({ onHide }): React.ReactNode => (
         <TooltipLinkList
           links={toLinks(list, currentIndex, setIndex, onHide)}
         />
       )}
-      closeOnClick
+      trigger="click"
     >
       <IconButton
+        active={active}
         css={{
           display: 'flex',
           alignItems: 'center',
         }}
-        active={active}
         title={TOOL_TIP_TITLE}
       >
         <Icons icon="category" />

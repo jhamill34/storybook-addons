@@ -226,7 +226,9 @@ describe('useColorModeAddonState', () => {
     let spy: jest.SpyInstance
     beforeEach(() => {
       spy = jest.spyOn(console, 'error')
-      spy.mockImplementation(() => {})
+      spy.mockImplementation(() => {
+        /** Do nothing */
+      })
     })
 
     afterEach(() => {
@@ -236,7 +238,7 @@ describe('useColorModeAddonState', () => {
     it('should throw an error if the default index is out of bounds', () => {
       const { container } = render(
         <MockErrorBoundary>
-          <MockColorMode jumpTo={0} defaultIndex={3} />
+          <MockColorMode defaultIndex={3} jumpTo={0} />
         </MockErrorBoundary>
       )
 
@@ -252,7 +254,7 @@ describe('useColorModeAddonState', () => {
     it('should throw an error if the default index less than 0', () => {
       const { container } = render(
         <MockErrorBoundary>
-          <MockColorMode jumpTo={0} defaultIndex={-1} />
+          <MockColorMode defaultIndex={-1} jumpTo={0} />
         </MockErrorBoundary>
       )
 
