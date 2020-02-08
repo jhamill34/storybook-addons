@@ -7,14 +7,8 @@ import {
   WrapperSettings,
 } from '@storybook/addons'
 import { ensure, ThemeProvider, ThemeVars } from '@storybook/theming'
-import { ThemeMap } from './models'
-import { firstTheme, secondTheme } from './theme'
+import { ThemeSettings } from './models'
 import { ThemeWrapper } from './components/ThemeWrapper'
-
-const THEMES: ThemeMap[] = [
-  { theme: firstTheme, name: 'First Theme' },
-  { theme: secondTheme, name: 'Second Theme' },
-]
 
 // TODO: Consume the params here to load themes
 export function wrapper(
@@ -22,17 +16,14 @@ export function wrapper(
   context: StoryContext,
   settings: WrapperSettings
 ): JSX.Element {
-  console.log('SETTINGS')
-  console.log(settings)
-  console.log('CONTEXT')
-  console.log(context)
+  const storyThemes = settings.parameters as ThemeSettings
   const { parameters = {} } = context
   const options = parameters.options || {}
   const theme = ensure(options.theme as ThemeVars)
 
   return (
     <ThemeProvider theme={theme}>
-      <ThemeWrapper themes={THEMES}>{story(context)}</ThemeWrapper>
+      <ThemeWrapper themes={storyThemes.themes}>{story(context)}</ThemeWrapper>
     </ThemeProvider>
   )
 }

@@ -29,7 +29,9 @@ export function ThemeWrapper(props: ThemeWrapperProps): React.ReactElement {
         show={showList}
         themes={props.themes}
       />
-      <ThemeProvider theme={theme.theme}>
+      <ThemeProvider
+        theme={Object.assign({}, theme.theme, { useBodyStyles: false })}
+      >
         <div
           sx={{
             backgroundColor: 'background',
@@ -39,7 +41,6 @@ export function ThemeWrapper(props: ThemeWrapperProps): React.ReactElement {
             boxShadow: '0 1px 3px rgba(0, 0, 0, 0.2)',
             zIndex: 1,
             position: 'relative',
-            marginBottom: '1em',
           }}
         >
           {props.children}

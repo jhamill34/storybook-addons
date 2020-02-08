@@ -1,0 +1,9 @@
+// Copy and Pass this object theme to your ThemeProvider Component
+
+export const defaultTheme = {
+  colors: {
+    background: 'red',
+    text: 'black',
+  },
+}
+

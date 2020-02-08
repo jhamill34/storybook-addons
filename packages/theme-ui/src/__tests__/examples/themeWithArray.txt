@@ -1,0 +1,17 @@
+// Copy and Pass this object theme to your ThemeProvider Component
+
+export const arrayTheme = {
+  breakpoints: ['1em', '2em'],
+  colors: {
+    background: 'red',
+    text: 'black',
+  },
+  fontSizes: [1, 2, 4, 8, 16],
+  styles: {
+    root: {
+      color: 'text',
+      p: 1,
+    },
+  },
+}
+

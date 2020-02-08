@@ -1,0 +1,10 @@
+// Use the following import
+import { customTheme } from 'my/theme/lib'
+
+export const customTheme = {
+  colors: {
+    background: 'red',
+    text: 'black',
+  },
+}
+

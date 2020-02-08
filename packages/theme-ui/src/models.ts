@@ -4,3 +4,7 @@ export type ThemeMap = {
   name: string
   theme: Theme
 }
+
+export type ThemeSettings = {
+  themes: ThemeMap[]
+}

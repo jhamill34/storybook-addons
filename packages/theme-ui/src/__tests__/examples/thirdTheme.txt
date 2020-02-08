@@ -1,0 +1,15 @@
+// Copy and Pass this object theme to your ThemeProvider Component
+
+export const thirdTheme = {
+  colors: {
+    background: 'red',
+    text: 'black',
+  },
+  styles: {
+    root: {
+      color: 'text',
+      p: 1,
+    },
+  },
+}
+

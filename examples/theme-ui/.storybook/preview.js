@@ -1,6 +1,8 @@
-import { addParameters } from '@storybook/react'
+import { addParameters, addDecorator } from '@storybook/react'
 import { setupPreview } from '@spedue/storybook-preset/dist/preview'
 import { create } from '@storybook/theming'
+import { withThemeProvider } from 'storybook-addon-theme-ui'
+import * as themes from '../src/themes'
 
 const myTheme = create({
   base: 'light',
@@ -24,7 +26,16 @@ const myTheme = create({
 setupPreview(addParameters)
 
 addParameters({
+  themeUi: {
+    themes: [
+      { theme: themes.silverTree, name: 'Silver Tree' },
+      { theme: themes.fountainBlue, name: 'Fountain' },
+      { theme: themes.pastelRed, name: 'Pastel Red' }
+    ]
+  },
   options: {
     theme: myTheme,
   },
 })
+
+addDecorator(withThemeProvider)
