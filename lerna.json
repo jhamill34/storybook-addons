@@ -1,6 +1,11 @@
 {
   "npmClient": "yarn",
   "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "message": "chore: publish"
+    }
+  },
   "packages": [
     "packages/*",
     "examples/*"
