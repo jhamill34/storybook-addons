@@ -9,7 +9,16 @@ type ButtonProps = {
 
 export function Button(props: ButtonProps): React.ReactElement {
   return (
-    <button sx={{ color: 'red', backgroundColor: 'text' }}>
+    <button
+      sx={{
+        border: 0,
+        borderRadius: '1em',
+        padding: '0.75em',
+        color: 'background',
+        backgroundColor: 'primary',
+        fontSize: '1em',
+      }}
+    >
       {props.title}
     </button>
   )

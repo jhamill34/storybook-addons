@@ -16,24 +16,21 @@ export const colors: ColorMode = {
   text: colorDark,
   background: colorLight,
   primary: colorPrimary,
-  secondary: colorSecondary,
-  tertiary: colorTertiary,
-  accent: colorBrand,
-  muted: colorMuted,
-  darkBrand: colorBrandDark,
 
   modes: {
     dark: {
       text: colorLight,
       background: colorDark,
       primary: colorPrimary,
-      secondary: colorSecondary,
-      tertiary: colorTertiary,
-      accent: colorBrand,
     },
   },
 }
 
 export const theme: Theme = {
   colors,
+  styles: {
+    root: {
+      padding: '0.5em',
+    },
+  },
 }

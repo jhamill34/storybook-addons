@@ -8,7 +8,7 @@ const myTheme = create({
   base: 'light',
 
   colorPrimary: 'hotpink',
-  colorSecondary: 'hotpink',
+  colorSecondary: '#505050',
 
   // Typography
   fontBase: '"Open Sans", sans-serif',

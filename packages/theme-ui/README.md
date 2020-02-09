@@ -3,6 +3,8 @@
 Storybook Theme UI allows your stories to be displayed in various themes supplied by theme-ui. This addon was made 
 to be primarliy used in conjunction with [Storybook Addon Docs](https://www.npmjs.com/package/@storybook/addon-docs) but can be used without as well.
 
+![Docs Example](./media/docs-example.gif)
+
 ## Installation
 
 Install the following npm module:

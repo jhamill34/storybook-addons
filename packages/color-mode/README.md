@@ -2,6 +2,8 @@
 
 Storybook Color Addon allows your stories to be displayed in their various color modes specified by theme-ui
 
+![Canvas Example](./media/canvas-example.gif)
+
 ## Installation
 
 Install the following npm module:
