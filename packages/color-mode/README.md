@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.com/joshrasmussen34/storybook-addon-color-mode.svg?branch=master)](https://travis-ci.com/joshrasmussen34/storybook-addon-color-mode)
-
 # Storybook Color Mode Addon
 
 Storybook Color Addon allows your stories to be displayed in their various color modes specified by theme-ui
@@ -25,6 +23,46 @@ import 'storybook-addon-color-mode/register'
 ```
 
 You should now be able to see the color mode addon icon in the the toolbar at the top of the screen.
+
+## withThemeProvider 
+
+To actually see your theme reflected in your stories you need to use the `withThemeProvider` decorator function. 
+
+```tsx
+import React from 'react'
+import { withThemeProvider } from 'storybook-addon-color-mode'
+import { Button } from '../Button'
+import { theme } from 'path/to/your/theme'
+
+export default {
+  title: 'Button', 
+  decorators: [withThemeProvider(theme)]
+ }
+
+export function withText(): JSX.Element {
+  return <Button title="Click Me" />
+}
+```
+
+You can also include the decorator globally in your preview file. 
+
+```ts
+import { addDecorator, addParameters } from '@storybook/react'
+import { withThemeProvider } from 'storybook-addon-color-mode'
+import { theme } from 'path/to/your/theme'
+
+addParameters({
+  colorMode: {
+    modes: {
+      dark: {
+        name: 'Dark',
+      },
+    },
+    defaultMode: 'default',
+  },
+})
+addDecorator(withThemeProvider(productTheme))
+```
 
 ## Configuration
 
