@@ -15,6 +15,14 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
+  "homepage": "https://gitlab.com/joshrasmussen/storybook-addons/-/tree/master/packages/theme-ui",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/joshrasmussen/storybook-addons"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/joshrasmussen/storybook-addons/issues"
+  },
   "files": [
     "dist/**/*",
     "README.md",
