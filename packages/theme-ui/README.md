@@ -1,169 +1,95 @@
-[![Build Status](https://travis-ci.com/joshrasmussen34/storybook-addon-color-mode.svg?branch=master)](https://travis-ci.com/joshrasmussen34/storybook-addon-color-mode)
+# Storybook Color Theme UI 
 
-# Storybook Color Mode Addon
-
-Storybook Color Addon allows your stories to be displayed in their various color modes specified by theme-ui
+Storybook Theme UI allows your stories to be displayed in various themes supplied by theme-ui. This addon was made 
+to be primarliy used in conjunction with [Storybook Addon Docs](https://www.npmjs.com/package/@storybook/addon-docs) but can be used without as well.
 
 ## Installation
 
 Install the following npm module:
 
 ```sh
-npm i --save-dev storybook-addon-color-mode theme-ui react
+npm i --save-dev storybook-addon-theme-ui theme-ui react
 ```
 
 or with yarn:
 
 ```sh
-yarn add -D storybook-addon-color-mode theme-ui react
+yarn add -D storybook-addon-theme-ui theme-ui react
 ```
-
-Then, add following content to .storybook/addons.js
-
-```js
-import 'storybook-addon-color-mode/register'
-```
-
-You should now be able to see the color mode addon icon in the the toolbar at the top of the screen.
 
 ## Configuration
 
-The color mode addon is configured by story parameters with the `colorMode` key. To configure globally, import `addParameters` from your app layer in your `config.js` file.
+The color mode addon is configured by story parameters with the `themeUi` key. To configure globally, import `addParameters` from your app layer in your `config.js` file.
 
 ```js
 import { addParameters } from '@storybook/react';
-import { Key } from 'storybook-addon-color-mode';
+import * as themes from '../src/themes'
 
 addParameters({
-  colorMode: {
-    modes: {
-      dark: {
-        name: 'Dark'
-      }
-    },
-    defaultMode: 'dark',
-    bindings: {
-      prefix: {
-        ctrlKey: true,
-        altKey: true,
-        shiftKey: false,
-      },
-      previousTrigger: Key.LeftArrow,
-      nextTrigger: Key.RightArrow,
-    }
+  themeUi: {
+    themes: [
+      { theme: themes.silverTree, name: 'Silver Tree' },
+      { theme: themes.fountainBlue, name: 'Fountain' },
+      { theme: themes.pastelRed, name: 'Pastel Red' }
+    ]
   },
-});
+})
 ```
 
 Options can take a object with the following keys:
 
-### modes: Object
+### themes: ThemeMap[] 
 
-A key-value pair of color modes's key and properties (see `Color Mode Model` definition below) for all color modes to be displayed. 
+An array of objects that include both a reference to your theme object and a name that will be displayed in 
+the theme chooser panel. 
 
-#### Color Mode Model
+#### Theme Map 
 
 ```ts
-type ColorMode = {
+import { Theme } from 'theme-ui'
+
+type ThemeMap = {
   /**
-   * name to display in the dropdown
+   * A reference to a theme-ui object.
+   */
+  theme: Theme 
+
+  /**
+   * The display name used in the theme chooser panel.
    */
   name: string
 }
 ```
 
-### defaultMode: string
+## withThemeProvider 
 
-A string representing the key that you would like to use as your default color mode. This will 
-be the color mode that will load up when your storybook starts and when you reload the page. 
-This can also be set on a per-story basis as well. 
+Like any other storybook decorator just import `withThemeProvider` from this package and add it to your 
+decorator list. 
 
-### bindings: KeyBinding
+```tsx
+import React from 'react'
+import { withThemeProvider } from 'storybook-addon-theme-ui'
+import { Button } from '../Button'
 
-Keybindings can be configured to cycle through different color modes. However, this is 
-completely optional. Keybindings are defined by a *prefix* and a *trigger* key to complete an action. 
+export default {
+  title: 'Button', 
+  decorators: [withThemeProvider]
+ }
 
-The default *prefix* is to hold down `Ctrl + Alt` (or `Control + Option` on a Mac). You can configure
-this with any combination of `Ctrl`, `Alt`, and `Shift`. 
+export function withText(): JSX.Element {
+  return <Button title="Click Me" />
+}
+```
 
-The default *trigger* keys are defined by three different actions: next, previous, and set. 
-
-| Action | Trigger Key | Configurable | 
-|:-------|:-----------:|:------------:|
-| Next Mode | `Ctrl` (`^`, `Control`) | `true` | 
-| Previous Mode | `Alt` (`Option`) | `true` |
-| Set Mode Index | # Keys (0 - 9) | `false` |
+Or done globally in your `preview.tsx`
 
 ```ts
-/**
- * Configuration to outline a common keybinding prefix
- * for triggering events.
- */
-type KeyBindingPrefix = {
-  /** Set true if Control (^ or Ctrl) Key is part of prefix */
-  ctrlKey: boolean
+import { addDecorator } from '@storybook/addons'
+import { withThemeProvider } from 'storybook-addon-theme-ui'
 
-  /** Set true if Alt (or Option) Key is part of prefix */
-  altKey: boolean
-
-  /** Set true if Shift Key is part of prefix */
-  shiftKey: boolean
-}
-
-/**
- * Complete configuration for keybindings
- */
-type KeyBinding = {
-  /** See Above */
-  prefix: KeyBindingPrefix
-
-  /** Which keycode should trigger going to the next color mode */
-  previousTrigger: Key
-
-  /** Which keycode should trigger going to the previous color mode */
-  nextTrigger: Key
-}
+addDecorator(withThemeProvider)
 ```
 
-## Example
+## Related Projects
 
-When setting your color modes the `key` must be identical to the key that is used in your `theme-ui` theme.
-
-### Storybook Config
-
-```js
-import { addParameters } from '@storybook/react';
-
-addParameters({
-  colorMode: {
-    modes: {
-      dark: {
-        name: 'Dark' // This is what will be displayed in the Storybook UI
-      }
-    },
-    defaultMode: 'dark' // Dark mode will start automatically 
-  },
-});
-```
-
-### Theme-UI Config
-
-```js
-const theme = {
-  colors: {
-    text: '#000',
-    background: '#fff',
-    modes: {
-      // This key must be the same as the one specified in your storybook config.
-      dark: {
-        text: '#fff',
-        background: '#000'
-      }
-    }
-  }
-}
-```
-
-## Inspiration 
-
-This project was highly influenced by [@storybook/addon-viewport](https://github.com/storybookjs/storybook/tree/next/addons/viewport)
+This project was built on top of the wonderfully designed [Theme UI](https://theme-ui.com) project.
