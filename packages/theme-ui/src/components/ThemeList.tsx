@@ -83,7 +83,7 @@ export function ThemeList(props: ThemeListProps): React.ReactElement {
     <StyledContainer showList={props.show}>
       <StyledRow>
         <StyledToggleButton onClick={toggleThemeCode}>
-          {showCode ? 'Show Theme' : 'Hide Theme'}
+          {showCode ? 'Hide Theme' : 'Show Theme'}
         </StyledToggleButton>
       </StyledRow>
       <StyledList>
