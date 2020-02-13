@@ -1,3 +1,16 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [0.1.4](https://gitlab.com/joshrasmussen/storybook-addons/compare/storybook-addon-theme-ui@0.1.3...storybook-addon-theme-ui@0.1.4) (2020-02-13)
+
+**Note:** Version bump only for package storybook-addon-theme-ui
+
+
+
+
+
 ## <small>0.1.3 (2020-02-13)</small>
 
 * chore: publish ([7397bbb](https://gitlab.com/joshrasmussen/storybook-addons/commit/7397bbb))
@@ -10,6 +23,3 @@
 * fix(theme-ui): show/hide theme code button ([211f4f8](https://gitlab.com/joshrasmussen/storybook-addons/commit/211f4f8))
 * feat: add show theme code in docs ([5238f8b](https://gitlab.com/joshrasmussen/storybook-addons/commit/5238f8b))
 * test: fix unit tests by locking storybook to 5.2.5 ([1ebc8d3](https://gitlab.com/joshrasmussen/storybook-addons/commit/1ebc8d3))
-
-
-
