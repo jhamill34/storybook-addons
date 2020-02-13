@@ -1,7 +1,7 @@
 // eslint-disable-next-line tsdoc/syntax
 /** @jsx jsx */
 import React from 'react'
-import { jsx, ThemeProvider } from 'theme-ui'
+import { jsx, ThemeProvider, Styled } from 'theme-ui'
 import { ThemeMap } from '../models'
 import { ThemeList } from './ThemeList'
 import { ToggleButton } from './ToggleButton'
@@ -43,7 +43,7 @@ export function ThemeWrapper(props: ThemeWrapperProps): React.ReactElement {
             position: 'relative',
           }}
         >
-          {props.children}
+          <Styled.root>{props.children}</Styled.root>
         </div>
       </ThemeProvider>
     </div>
