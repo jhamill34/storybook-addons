@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.5-alpha.0](https://gitlab.com/joshrasmussen/storybook-addons/compare/storybook-addon-theme-ui@0.1.4...storybook-addon-theme-ui@0.1.5-alpha.0) (2020-02-13)
+
+
+### Bug Fixes
+
+* **theme-ui:** root styles not not being passed down to story ([47ef0d6](https://gitlab.com/joshrasmussen/storybook-addons/commit/47ef0d6f42b3c16c1bbd0acea504e0c54bf32483))
+
+
+
+
+
 ## [0.1.4](https://gitlab.com/joshrasmussen/storybook-addons/compare/storybook-addon-theme-ui@0.1.3...storybook-addon-theme-ui@0.1.4) (2020-02-13)
 
 **Note:** Version bump only for package storybook-addon-theme-ui
