@@ -15,6 +15,7 @@ export function Button(props: ButtonProps): React.ReactElement {
         backgroundColor: 'primary',
         fontWeight: 'bold',
         fontSize: '1em',
+        fontFamily: 'inherit',
         padding: '0.75em',
         border: 0,
         borderRadius: '1em',

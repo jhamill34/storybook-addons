@@ -1,10 +1,18 @@
 import { Theme } from 'theme-ui'
 
 export const silverTree: Theme = {
+  fonts: {
+    body: 'Menlo, monospace',
+  },
   colors: {
     background: '#FFFFFF',
     primary: '#6dc397',
     text: '#003319',
+  },
+  styles: {
+    root: {
+      fontFamily: 'body',
+    },
   },
 }
 
