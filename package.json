@@ -11,7 +11,8 @@
     "compile": "lerna run compile",
     "lint": "spedue lint",
     "start": "spedue start",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "prepublish": "yarn run build && yarn run test"
   },
   "prettier": "@spedue/prettier-config",
   "eslintConfig": {
